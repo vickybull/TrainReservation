@@ -12,7 +12,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware {
 	
 	private String username;
 	private String password;
-	private String passwords;
 	
 	private UserDAOImpl denglu;
 	private HttpServletRequest request;
