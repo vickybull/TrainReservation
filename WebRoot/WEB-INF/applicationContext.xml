@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="rsLoginAction" class="com.LoginAction">
+		<property name="username" value="request.getParameter('username')"></property>
+		<property name="password" value="request.getParameter('password')"></property>
+		<property name="denglu" ref="rsUserDAOImpl"></property>
+	</bean>
+	<bean id="rsRegisterAction" class="com.RegisterAction">
+		<property name="name" value="request.getParameter('name')"></property>
+		<property name="pw" value="request.getParameter('pw')"></property>
+		<property name="zhuce" ref="rsUserDAOImpl"></property>
+	</bean>
+	<bean id="rsUserDAOImpl" class="rs.user.dao.impl.UserDAOImpl"></bean>
+	<bean id="rsTicketDAOImpl" class="rs.user.dao.impl.TicketDAOImpl"></bean>
+	<bean id="rsSearchAction" class="com.SearchAction"> 
+		<property name="chu" value="request.getParameter('chu')"></property>
+		<property name="dao" value="request.getParameter('dao')"></property>
+		<property name="time" value="request.getParameter('time')"></property>
+		<property name="tdi" ref="rsTicketDAOImpl"></property>
+	</bean>
+</beans>
